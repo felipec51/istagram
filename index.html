@@ -262,11 +262,58 @@
             }
         }
 
-        // Función para obtener comentarios relacionados con la imagen (simulación)
-        function obtenerComentariosRelacionados(src) {
-            // Aquí deberías implementar la lógica para obtener comentarios según la imagen
-            // Puedes retornar una cadena de HTML que represente los comentarios
-            return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+   
+        function ComentariosRelacionados(indiceImagenActual) {
+            
+            
+             if(indiceImagenActual===0){
+                 return '<p>indice cero</p><p>dinero</p>';
+             }
+            if(indiceImagenActual===1){
+                 return '<p>posicion2</p><p>Comentario 4</p>';
+             }
+             if(indiceImagenActual===2){
+                 return '<p>Comentario que pasaaa</p><p>dije 2</p>';
+             }
+            if(indiceImagenActual===3){
+                 return '<p>comen 2</p><p>Comentario 4</p>';
+             }
+             if(indiceImagenActual===4){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===5){
+                 return '<p>close friend posicion5</p><p>Comentario 4</p>';
+             }
+             if(indiceImagenActual===6){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===7){
+                 return '<p>comen 2</p><p>hoy</p>';
+             }
+             if(indiceImagenActual===8){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===9){
+                 return '<p>indice 9</p><p>Comentario 4</p>';
+             }
+             if(indiceImagenActual===10){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===11){
+                 return '<p>comen 2</p><p>Comentario 4</p>';
+             }
+             if(indiceImagenActual===12){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===13){
+                 return '<p>comen 2</p><p>Comentario 4</p>';
+             }
+              if(indiceImagenActual===14){
+                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+             }
+            if(indiceImagenActual===15){
+                 return '<p>comen 2</p><p>toy</p>';
+             }
         }
 
         function toggleReproduccionPausa() {
@@ -280,7 +327,7 @@
         }
 
           // Función para mostrar el modal con la imagen clicada
-      function mostrarModal(src) {
+  function mostrarModal(src) {
     const modal = document.getElementById('modal');
     const modalContenido = document.getElementById('modalContenido');
     const imagenModal = document.getElementById('imagenModal');
@@ -298,6 +345,7 @@
         // Configura el atributo src solo cuando se abre el modal
         videoModal.src = src;
         videoModal.addEventListener('click', toggleReproduccionPausa);
+
         // Muestra el botón de mute
         botonMute.style.display = 'block';
     } else {
@@ -305,6 +353,7 @@
         imagenModal.style.display = 'block';
         videoModal.style.display = 'none';
         imagenModal.src = src;
+
         // Si había un evento clic previamente agregado al video, remuévelo
         videoModal.removeEventListener('click', toggleReproduccionPausa);
 
@@ -312,8 +361,9 @@
         botonMute.style.display = 'none';
     }
 
-    comentariosModal.innerHTML = obtenerComentariosRelacionados(src);
-    // Determina si la imagen tiene formato horizontal y agrega o quita la clase correspondiente
+    
+    comentariosModal.innerHTML = ComentariosRelacionados(indiceImagenActual);
+
     const isHorizontal = imagenModal.naturalWidth > imagenModal.naturalHeight;
 
     // Aplicar clases al contenedor modal para centrar el contenido
@@ -323,11 +373,13 @@
     } else {
         modalContenido.classList.add('vertical-center');
     }
+
     // Bloquea la barra de desplazamiento al mostrar el modal
     document.body.style.overflow = 'hidden';
 
     modal.style.display = 'block';
 }
+
         // Función para cerrar el modal
         function cerrarModal() {
             const modal = document.getElementById('modal');
@@ -336,21 +388,30 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Obtén las imágenes y configura el evento clic
-        const imagenes = document.querySelectorAll('.mainCont__grid div > img');
-        imagenes.forEach((imagen, index) => {
-            // Asigna el índice de la imagen actual como un atributo de datos
-            imagen.dataset.index = index;
+document.addEventListener('DOMContentLoaded', function () {
+    const imagenes = document.querySelectorAll('.mainCont__grid div > img');
 
-            // Agrega un event listener para mostrar el modal al hacer clic en la imagen
-            imagen.addEventListener('click', () => {
-                // Muestra el modal con la imagen clicada
-                mostrarModal(imagen.src);
+    // Función para obtener el índice de la imagen actual
+    function indiceImg(event) {
+        const imagenClicada = event.target.closest('.image-container');
+        if (imagenClicada) {
+            const indice = Array.from(imagenClicada.parentElement.children).indexOf(imagenClicada);
+            console.log("Posición clicada:", indice);
+            // Puedes guardar la posición en una variable global si es necesario
+            // Guarda el índice en la variable que prefieras, por ejemplo:
+            indiceImagenActual = indice;
 
-                // Actualiza el índice de la imagen actual
-                indiceImagenActual = parseInt(imagen.dataset.index);
-            });
-        });
+            // Muestra el modal con la imagen clicada y el índice actual
+            mostrarModal(imagenClicada.querySelector('img').src, indice);
+        }
+    }
+
+    // Agrega un event listener para cada imagen en el mainCont__grid
+    imagenes.forEach((imagen) => {
+        imagen.addEventListener('click', indiceImg);
+    });
+});
+
 
         // Cierra el modal al hacer clic fuera de él
         window.addEventListener('click', function(event) {
@@ -362,12 +423,14 @@
 
         // Variable para mantener el índice de la imagen actual
         var indiceImagenActual = 0;
+        var indice=0;
         var indiceAlbum=0
-
+        
            // Función para cambiar la imagen en el modal según la dirección (anterior o siguiente)
             function cambiarImagen(direccion) {
                 // Incrementa o decrementa el índice según la dirección y asegura que esté dentro de los límites del array
-                const nuevaPosicion = (indiceImagenActual + direccion + imagenesAsociadas.length) % imagenesAsociadas.length;
+                let nuevaPosicion = (indiceImagenActual + direccion + imagenesAsociadas.length) % imagenesAsociadas.length;
+                indice=nuevaPosicion;
 
                 // Muestra la nueva imagen solo si la nueva posición es diferente a la actual
                 if (nuevaPosicion !== indiceImagenActual) {
@@ -376,11 +439,13 @@
 
                     // Muestra el modal con la nueva imagen correspondiente al nuevo índice
                     mostrarModal(imagenesAsociadas[indiceImagenActual]);
+                    comentariosModal(indiceImagenActual);
                 }
             }
             function cambiarAlbum(direccion) {
                 if(indiceImagenActual===0){
                    mostralAlbum(imagenesAlbum, direccion);
+
                 }
                 if(indiceImagenActual===1){
                    mostralAlbum(posicionOne, direccion);
@@ -422,6 +487,7 @@
                     mostrarModal(array[indiceAlbum]);
                     }
         }
+      
     </script>
 
 </body>
