@@ -1,0 +1,443 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ 
+}
+body {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  min-width: 1024px;
+  max-width: 1400px;
+  background: var(--bgcolor);
+  margin: auto; /* Centra el contenido horizontalmente */
+}
+nav {
+    min-width: 1024px;
+    max-width: 1400px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border-bottom: solid #dbdbdb 1px;
+    background: #fff;
+}
+
+
+.nav-cont {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.cont-input {
+    height: 28px;
+    border: solid 1px #dbdbdb;
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    padding: 5px;
+}
+
+.cont-input input {
+    border: 0;
+    outline: none;
+    background: #fafafa;
+}
+
+.iconos svg {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.iconos .small-logo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header {
+    width: 60%;
+    margin: auto;
+    
+    padding: 20px 0;
+}
+
+.perfil-container {
+    display: flex;
+ transform: translateY(22px);
+}
+
+.perfil-container img {
+
+    height: 150px;
+    width: 150px;
+    border: solid 3px #CCCCCC;
+    border-radius: 50%;
+    transform: translateY(52px);
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+.contenedor-cabezera {
+    margin-left: 100px;
+}
+
+.cabezera1 {
+    width: 290px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+
+.cabezera1 h1 {
+    color: #616161;
+    font-weight: 100;
+    font-size: 26px;
+}
+
+.cabezera1 button {
+    width: 360px;
+    height: 32px;
+    background-color: #ECECEC ;
+    border: solid #ECECEC 1px;
+    color: #000000; 
+    cursor: pointer;
+    border-radius: 9px;
+    margin-right:-10px; /* Añade margen derecho de 20px */
+    margin-left: 15px;  /* Añade margen izquierdo de 20px */
+}
+.config button {
+    margin-right: 10px;
+    margin-left: 345px;
+    transform: translateY(35px);
+    border: solid #FFFFFF 1px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 9px;
+    background-color: transparent; /* Establece el fondo transparente */
+}
+
+.cabezera1 button:hover {
+    background-color: #CBCACA;  /* Cambia el color de fondo al pasar el ratón sobre el botón */
+}
+
+.cabezera1 svg {
+    cursor: pointer;
+    margin-right: 10px; /* Ajusta el margen derecho del SVG según tu preferencia */
+}
+
+.cabezera2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.cabezera3 h2,
+.cabezera3 .p-ciencia,
+.cabezera3 .p-creador,
+.cabezera3 .p-dev,
+.cabezera3 .p-suscribe {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.cabezera3 .p-ciencia {
+    color: #a2a2a2;
+}
+
+.cabezera3 .p-link {
+    text-align: none;
+    color: #1e4e7c;
+}
+
+.historias {
+    display: flex;
+    margin-top: 30px;
+    
+    transform: translateY(52px);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+ }
+
+.historias div {
+    transform: translateX(-90px);
+    width: 432px;
+    text-align: center;
+    margin-right: -131px; /* Añade margen derecho de 10px */
+    margin-left: -165px; 
+}
+
+.historias img {
+ 
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 80px; /* Añade margen derecho de 20px */
+    margin-left: 80px;  /* Añade margen izquierdo de 20px */
+    text-align: center;
+     
+    border-radius: 6px; /* Opcional: Añade esquinas redondeadas */
+    overflow: hidden; /* Opcional: Evita que el borde se extienda por las imágenes */
+    border: 3px solid #CCCCCC; /* Añade un borde gris de 2px */
+
+}
+.historias__dev img,
+.historias__felipe img,
+.historias__cumple img,
+.historias__nueva img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+   
+}
+
+
+
+.linea {
+    width: 100%;
+    height: 1px;
+    margin: auto;
+    background-color: #dbdbdb;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+main {
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.mainCont__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 279px);
+    grid-template-rows: repeat(5, 279px);
+    gap: 8px;
+    margin: 20px;
+}
+
+.mainCont__grid div {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainCont__grid div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto recortará y ajustará la imagen para llenar el contenedor */
+    cursor: pointer;
+}
+
+
+.modal {
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-contenido {
+    object-fit: contain;
+
+    width:660px;
+    height: 557px;
+    cursor: pointer;
+    display: block;
+    margin-top: 65px;
+    margin-left: 217px;
+   
+    border-radius: 15px;
+    background-color: rgb(165 165 165 / 19%);
+}
+
+.modal-contenido img,
+.modal-contenido video {
+    width: 100%; /* Cambiado a 100% */
+    height: 100%; /* Cambiado a 100% */
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%; /* Agregado para asegurar el ajuste al contenedor */
+}
+
+/* Barras negras para formato horizontal */
+.modal-contenido.horizontal img,.modal-contenido.horizontal video {
+    width: 90%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.modal-contenido.horizontal::before,
+.modal-contenido.horizontal::after {
+    content: '';
+   
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: black;
+}
+
+.modal-contenido.horizontal::before {
+    left: 0;
+}
+
+.modal-contenido.horizontal::after {
+    right: 0;
+}
+
+.cerrar-modal {
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 55px;
+    right: 12px;
+
+    cursor: pointer;
+
+}
+
+ .comentarios-modal {
+        position: absolute;
+        border-radius: 25px;
+        top: 48px;
+        right: -820px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff61;
+        width: 364px;
+        height: 544px;
+        margin: auto;
+        padding: 20px; /* Puedes ajustar el espacio interno según tus necesidades */
+        overflow: auto; /* Añade desplazamiento si los comentarios son largos */
+    }
+
+
+.svg-overlay {
+    width: 515px;
+    height: 63px;
+    transform: translateY(-296px);
+    pointer-events: none; /* Evitar que el SVG bloquee eventos del ratón */
+}
+
+/* Estilo común para los botones Volver y Siguiente */
+.Volver {
+    position: absolute;
+    background-color: #fff;
+    color: #37ffe5;
+    padding: 10px 10px;
+    border: 0px solid #fbfbfb;
+    cursor: pointer;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Estilo específico para el botón Volver */
+.Volver {
+    left: 15px;
+    top: 52%;
+    transform: translateY(-50%);
+}
+
+/* Estilo específico para el botón Siguiente */
+.next {
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.next {
+    position: fixed;
+    background-color: #fff;
+    color: #37ffe5;
+    padding: 10px 10px;
+    border: 0px solid #fbfbfb;
+    cursor: pointer;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+/* Estilo del contenedor del SVG dentro del botón */
+.Volver span, .next span ,.atras: span,.avansa: span{
+    display: inline-block;
+    transform: rotate(0deg);
+
+}
+
+/* Estilo del SVG */
+.Volver svg,.next svg {
+    fill: #000000;
+    height: 16px;
+    width: 16px;
+    margin-right: 1px;
+
+}
+
+/* Estilo cuando pasas el ratón sobre el botón */
+.Volver:hover ,next:hover{
+    background-color: rgb(187 187 187 / 74%);
+    color: #fff;
+}
+
+.avansa:hover,.atras:hover{
+   background-color: rgb(187 187 187 / 44%);
+    color: #fff;
+}
+.avansa {
+    transform: translateY(-330px);
+    margin-left: 838px;
+    position: fixed;
+    background-color: #ffffffa1;
+    color: #37ffe5;
+    padding: 5px 9px;
+    border: 0px solid #fbfbfb;
+    cursor: pointer;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.atras {
+    transform: translateY(-345px);
+    margin-left: 220px;
+    position: fixed;
+    background-color: #ffffffa1;
+    color: #37ffe5;
+    padding: 5px 9px;
+    border: 0px solid #fbfbfb;
+    cursor: pointer;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
