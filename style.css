@@ -441,3 +441,95 @@ main {
 }
 
 
+  .comentario {
+        font-family: 'Bradley Hand', cursive;
+        color: #FFFFFF;
+    }
+/*caja de comentarios styles*/
+
+        #chat-container {
+            max-width: 350px;
+            margin: -51px auto;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: -392px;
+            transform: translateY(-342px);
+            font-family: 'Bradley Hand', cursive;
+            color: #FFFFFF;
+            
+        }
+
+         #message-input {
+            width: 60%;
+            padding: 5px;
+            margin-right: 5px;
+            font-family: 'Bradley Hand', cursive;
+            background-color: #d5d5d5a8;
+           
+           
+        }
+
+        #send-button {
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 14px;
+            background-color: #ffffff96;
+            border-color: #d2f5d33f;
+
+        }
+
+        .buttonWhite {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #d2f5d33f;
+        }
+     
+        .buttonRosado {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: pink;
+        }
+
+        .message-container {
+            height: 310px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 12px;
+            max-width: 70%;
+            word-wrap: break-word;
+            font-size: 16px;
+        }
+
+        .pink {
+            text-align: right;
+            background-color: #FFC0CB;
+            color: black;
+            width: max-content;
+            margin-left: auto; /* Alinear al borde derecho */
+        }
+
+        .white {
+            background-color: #d2f5d33f;
+            width: max-content;
+        }
+
+        .message-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .message-container::-webkit-scrollbar-thumb {
+            background-color: #ddd;
+        }

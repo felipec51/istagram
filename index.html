@@ -109,7 +109,7 @@
             <div class="image-container"><img src="imgs/mono.jpg" alt=""></div>
             <div class="image-container"><img src="img/37.jpg" alt=""></div>
             <div class="image-container"><img src="img/17.jpg" alt=""></div>
-            <div class="image-container"><img src="imgs/imgfe.jpg" alt=""></div>
+            <div class="image-container"><img src="pho/47.webp" alt=""></div>
             <div class="image-container"><img src="img/20.jpg" alt=""></div>
             <div class="image-container"><img src="imgs/mayo.jpg" alt=""></div>
             <div class="image-container"><img src="img/31.jpg" alt=""></div>
@@ -133,6 +133,17 @@
             </div>
             <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
             <div id="comentariosModal" class="comentarios-modal"></div>
+
+         <div id="chat-container">
+            <div class="message-container" id="chat-messages"></div>
+            <input type="text" id="message-input" placeholder="Escribe un mensaje" onkeydown="enviarConEnter(event)">
+            <div class="buttonWhite" onclick="seleccionarColor('white')"></div>
+            <div class="buttonRosado" onclick="seleccionarColor('pink')"></div>
+            <button id="send-button" onclick="enviarMensaje()">Enviar</button>
+            <button onclick="editarPrimerMensaje()">Editar Primer Mensaje</button>
+            <button onclick="eliminarPrimerMensaje()">Eliminar Primer Mensaje</button>
+         </div>
+
         </div>
         
         <div class="botones-modal">
@@ -179,7 +190,7 @@
             "imgs/mono.jpg",
             "img/37.jpg",
             "img/17.jpg",
-            "imgs/imgfe.jpg",
+            "pho/47.webp",
             "img/20.jpg",
             "imgs/mayo.jpg",
             "img/31.jpg",
@@ -227,7 +238,6 @@
         "pho/43.jpg",
         "img/27.jpg",
         "img/28.jpg",
-        "img/29.jpg",
         "img/30.jpg"
         
         ];
@@ -257,8 +267,11 @@
             "pho/37.jpg"
             ];
         const posicion8=[
+
             "pho/38.webp",
+            "pho/47.webp",
             "pho/39.webp",
+            "img/29.jpg",
             "pho/40.jpg"
             ];
         const posicion9=[
@@ -298,56 +311,59 @@
         }
 
    
+
+
         function ComentariosRelacionados(indiceImagenActual) {
             
             
              if(indiceImagenActual===0){
-                 return '<p>HOlA COMO ESTAS </p><p>no se porque quise replicar istagram lo queria hacer tipo pinterest </p>pero antes que nada mira la siguente imagen<p> </p>';
+                 return '<p class="comentario">HOlA COMO ESTAS no se porque quise replicar istagram lo queria hacer tipo pinterest pero antes que nada mira la siguente imagen </p>';
              }
             if(indiceImagenActual===1){
-                 return '<p>olii</p><p>te amo <3 </p>';
+                 return '<p class="comentario">olii</p><p>te amo <3 </p>';
+
              }
              if(indiceImagenActual===2){
-                 return '<p>que prefieres el rayo mcquin</p><p>o mate </p>';
+                 return '<p class="comentario">que prefieres el rayo mcquin</p><p>o mate </p>';
              }
             if(indiceImagenActual===3){
-                 return '<p>comen 2</p><p>Comentario 4</p>';
+                 return '<p class="comentario">comen 2</p><p>Comentario 4</p>';
              }
              if(indiceImagenActual===4){
-                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+                 return '<p class="comentario">Comentario que pasaaa</p><p>Comentario 2</p>';
              }
             if(indiceImagenActual===5){
-                 return '<p>close friend </p><p>Comentario 4</p>';
+                 return '<p class="comentario">close friend </p><p>Comentario 4</p>';
              }
              if(indiceImagenActual===6){
-                 return '<p>son muchas fotos quisas</p><p>y con 16 publicaciones son bastantes y para organizarlas esta complicado </p>';
+                 return '<p class="comentario">son muchas fotos quisas</p><p>y con 16 publicaciones son bastantes y para organizarlas esta complicado </p>';
              }
             if(indiceImagenActual===7){
-                 return '<p>comen 2</p><p>hoy</p>';
+                 return '<p class="comentario"> comen 2</p>';
              }
              if(indiceImagenActual===8){
-                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+                 return '<p class="comentario">Estas fotos quedaron muy aesthetic estan lindas JAKJAKJ.</p><p class="comentario">Creo que en esos dias te regale un aretes morados y los botaste <p class="comentario">o lo perdiste ,mal ahí ._. </p>';
              }
             if(indiceImagenActual===9){
-                 return '<p>indice 9</p><p>Comentario 4</p>';
+                 return '<p class="comentario">indice 9</p><p>Comentario 4</p>';
              }
              if(indiceImagenActual===10){
-                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+                 return '<p class="comentario">Comentario que pasaaa</p><p>Comentario 2</p>';
              }
             if(indiceImagenActual===11){
-                 return '<p>Mi mejor amiga siempre será mi mejor amiga asi estudie en otra parte viva en otro lado del mudo y no hable contigo todos los dias ,pero el cariño que te tengo no me lo quita nadie 💚</p><p>te quiero hastas el infinito </p>';
+                 return '<p class="comentario">Mi mejor amiga siempre será mi mejor amiga asi estudie en otra parte viva en otro lado del mudo y no hable contigo todos los dias ,pero el cariño que te tengo no me lo quita nadie 💚</p><p class="comentario">te quiero hastas el infinito </p>';
              }
              if(indiceImagenActual===12){
-                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+                 return '<p class="comentario">Comentario que pasaaa</p><p>Comentario 2</p>';
              }
             if(indiceImagenActual===13){
-                 return '<p>comen 2</p><p>Comentario 4</p>';
+                 return '<p class="comentario">comen 2</p><p>Comentario 4</p>';
              }
               if(indiceImagenActual===14){
-                 return '<p>Comentario que pasaaa</p><p>Comentario 2</p>';
+                 return '<p class="comentario">Comentario que pasaaa</p><p>Comentario 2</p>';
              }
             if(indiceImagenActual===15){
-                 return '<p>comen 2</p><p>toy</p>';
+                 return '<p class="comentario">comen 2</p><p>toy</p>';
              }
         }
 
@@ -529,7 +545,155 @@ document.addEventListener('DOMContentLoaded', function () {
                     mostrarModal(array[indiceAlbum]);
                     }
         }
-      
+      // caja de comentarios
+
+
+        let colorSeleccionado = 'white';
+    let mensajeId = 1; // Contador de mensajes
+
+    document.addEventListener('DOMContentLoaded', cargarConversacion);
+
+    function enviarConEnter(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            enviarMensaje();
+        }
+    }
+
+    function seleccionarColor(color) {
+        colorSeleccionado = color;
+        // Actualiza el color del borde del cuadro de entrada según el color seleccionado
+        const mensajeInput = document.getElementById('message-input');
+        mensajeInput.style.border = `2px solid ${colorSeleccionado}`;
+    }
+
+    function enviarMensaje() {
+    const mensajeInput = document.getElementById('message-input');
+    const mensaje = mensajeInput.value.trim();
+
+    if (mensaje !== '') {
+        const nuevoMensaje = document.createElement('div');
+        nuevoMensaje.className = 'message ' + colorSeleccionado;
+        nuevoMensaje.textContent = mensaje;
+
+        // Asignar ID al nuevo mensaje
+        nuevoMensaje.dataset.id = mensajeId++;
+
+        const contenedorMensajes = document.getElementById('chat-messages');
+        contenedorMensajes.appendChild(nuevoMensaje);
+
+        mensajeInput.value = '';
+        // Actualizar el color del borde aquí para mantenerlo después del envío
+        mensajeInput.style.border = `2px solid ${colorSeleccionado}`;
+
+        guardarConversacion();
+        actualizarScroll();
+    }
+}
+
+    document.getElementById('message-input').addEventListener('focus', function() {
+        this.style.border = `2px solid ${colorSeleccionado}`;
+    });
+
+    function guardarConversacion() {
+        const contenedorMensajes = document.getElementById('chat-messages');
+        const mensajes = [];
+
+        // Obtener todos los mensajes del contenedor
+        const mensajesHTML = contenedorMensajes.getElementsByClassName('message');
+
+        // Recorrer los mensajes y guardar sus textos y clases
+        for (const mensajeHTML of mensajesHTML) {
+            const mensaje = {
+                id: mensajeId++,
+                texto: mensajeHTML.textContent,
+                clase: [...mensajeHTML.classList].filter(clase => clase !== 'message').join(' '), // Obtener todas las clases excepto 'message'
+            };
+            mensajes.push(mensaje);
+        }
+
+        // Guardar la conversación como cadena JSON
+        localStorage.setItem('conversacion', JSON.stringify(mensajes));
+    }
+function cargarConversacion() {
+    const contenedorMensajes = document.getElementById('chat-messages');
+    const conversacionGuardada = localStorage.getItem('conversacion');
+
+    if (conversacionGuardada) {
+        const mensajes = JSON.parse(conversacionGuardada);
+
+        // Limpiar el contenedor de mensajes
+        contenedorMensajes.innerHTML = '';
+
+        // Recrear los mensajes a partir de los datos guardados
+        for (const mensaje of mensajes) {
+            const nuevoMensaje = document.createElement('div');
+            nuevoMensaje.className = `message ${mensaje.clase}`;
+            nuevoMensaje.textContent = mensaje.texto;
+            // Asignar ID al mensaje ya existente
+            nuevoMensaje.dataset.id = mensaje.id;
+
+            contenedorMensajes.appendChild(nuevoMensaje);
+        }
+
+        actualizarScroll();
+    }
+}
+
+    function actualizarScroll() {
+        const contenedorMensajes = document.getElementById('chat-messages');
+        contenedorMensajes.scrollTop = contenedorMensajes.scrollHeight;
+    }
+
+    function editarMensaje(idMensajeAEditar, mensajeEditado) {
+        const contenedorMensajes = document.getElementById('chat-messages');
+        const mensajesHTML = contenedorMensajes.getElementsByClassName('message');
+        
+        for (const mensajeHTML of mensajesHTML) {
+            if (mensajeHTML.dataset.id === idMensajeAEditar.toString()) {
+                mensajeHTML.textContent = mensajeEditado;
+                guardarConversacion();
+                return;
+            }
+        }
+    }
+
+    function eliminarMensaje(idMensajeAEliminar) {
+        const contenedorMensajes = document.getElementById('chat-messages');
+        const mensajesHTML = contenedorMensajes.getElementsByClassName('message');
+        
+        for (const mensajeHTML of mensajesHTML) {
+            if (mensajeHTML.dataset.id === idMensajeAEliminar.toString()) {
+                mensajeHTML.remove();
+                guardarConversacion();
+                return;
+            }
+        }
+    }
+
+    function editarPrimerMensaje() {
+        const primerMensaje = document.querySelector('.message');
+        if (primerMensaje) {
+            const idMensajeAEditar = primerMensaje.dataset.id;
+            const mensajeEditado = 'Mensaje editado';
+            editarMensaje(idMensajeAEditar, mensajeEditado);
+        } else {
+            console.log('No hay mensajes para editar.');
+        }
+    }
+
+    function eliminarPrimerMensaje() {
+        const primerMensaje = document.querySelector('.message');
+        if (primerMensaje) {
+            const idMensajeAEliminar = primerMensaje.dataset.id;
+            eliminarMensaje(idMensajeAEliminar);
+        } else {
+            console.log('No hay mensajes para eliminar.');
+        }
+    }
+
+
+        
     </script>
 
 </body>
